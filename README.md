@@ -8,4 +8,4 @@
 
 Команда для запуска контейнера на основе собранного образа:
 
-#### docker run -p 5000:8080 -d --name rest_api_container flask_rest_api_image
+#### docker run -P -d --name rest_api_container flask_rest_api_image
