@@ -5,7 +5,7 @@ from app import errors
 
 
 def validate(source: str, req_schema: dict):
-    """Валидатор"""
+    """Validates incoming data accordingly with the schema"""
 
     def decorator(func):
 
