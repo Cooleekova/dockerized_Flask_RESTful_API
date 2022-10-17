@@ -11,13 +11,31 @@ API provides acess to the database with users and ads.
 
 #### Docker Instructions:
 
-1. To build an image from a provided Dockerfile, change to the current directory and run the command:
+The command to run the database service locally:
 
-    `docker build --tag flask_rest_api_image .`
+`docker compose up -d db`
 
-2. The command to run the container based on the built image:
+Then to run your Flask application, type:
 
-    `docker run -P -d --name rest_api_container flask_rest_api_image`
+`docker compose up --build dockerized_flask_api`
+
+If you get an error related to port 5432, try to check if this port is locally occupied by PostgreSQL:
+
+`sudo ss -lptn 'sport = :5432'`
+
+And if so, local PostgreSQL can be temporarily disabled this way:
+
+`sudo service postgresql stop`
+
+#### Testing Instructions:
+
+After you recieved a message like:
+
+**Running on http://HOST:PORT/ (Press CTRL+C to quit)**
+
+you can try to add new user to the app by running command:
+    
+`curl HOST:PORT/users/ -d '{"username": "Name", "email": "example@example.com", "password": "abc12536"}' -H 'Content-Type: application/json'`
 
 
 #### Used technologies:
@@ -25,4 +43,4 @@ API provides acess to the database with users and ads.
 - Flask
 - PostgreSQL
 - SQLAlchemy
-
+- Docker
