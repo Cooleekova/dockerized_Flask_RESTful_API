@@ -4,9 +4,13 @@
 
 API provides acess to the database with users and ads.
 
-**Users.** Implemented the ability to create new users and get user profile data by ID.
+**Users.**
 
-**Ads.** An ad can be created, viewed, and deleted.
+Implemented the ability to create new users and get user profile data by ID.
+
+**Ads.**
+
+An ad can be created, viewed, and deleted.
 
 
 #### Docker Instructions:
