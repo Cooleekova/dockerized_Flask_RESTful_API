@@ -6,7 +6,12 @@ from app import config
 
 
 app = Flask(__name__)
-app.config.from_mapping(SQLALCHEMY_DATABASE_URI=config.POSTGRES_URI)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+
+# Here is the database configuration for running database locally without docker
+# (requires .env file):
+# app.config.from_mapping(SQLALCHEMY_DATABASE_URI=config.POSTGRES_URI)
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 db = SQLAlchemy(app)
