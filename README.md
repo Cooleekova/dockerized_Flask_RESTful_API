@@ -1,11 +1,28 @@
-# Домашнее задание к лекции «Flask»
+## RESTful API for classifieds website
 
-## REST API (backend) для сайта объявлений, написанное на Flask.
+### Project functionality:
 
-Для сборки образа из файла Dockerfile необходимо перейти в текущий каталог и выполнить команду:
+API provides acess to the database with users and ads.
 
-#### docker build --tag flask_rest_api_image .
+**Users.** Implemented the ability to create new users and get user profile data by ID.
 
-Команда для запуска контейнера на основе собранного образа:
+**Ads.** An ad can be created, viewed, and deleted.
 
-#### docker run -P -d --name rest_api_container flask_rest_api_image
+
+#### Docker Instructions:
+
+1. To build an image from a provided Dockerfile, change to the current directory and run the command:
+
+    `docker build --tag flask_rest_api_image .`
+
+2. The command to run the container based on the built image:
+
+    `docker run -P -d --name rest_api_container flask_rest_api_image`
+
+
+#### Used technologies:
+- Python 3
+- Flask
+- PostgreSQL
+- SQLAlchemy
+
