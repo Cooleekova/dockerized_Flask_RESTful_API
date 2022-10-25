@@ -48,3 +48,4 @@ you can try to add new user to the app by running command:
 - PostgreSQL
 - SQLAlchemy
 - Docker
+- JSON
